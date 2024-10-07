@@ -14,7 +14,8 @@ def main():
 #    print(ordered_dict)
 
     for entry in ordered_dict.items():
-        print(entry)
+        line = f"The '{entry[0]}' character was found {entry[1]} times"
+        print(line)
         
 main()
 
