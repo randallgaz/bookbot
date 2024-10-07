@@ -1,12 +1,15 @@
 
 def main():
     with open('books/frankenstein.txt') as f:
-        content = f.read()
+        content = f.read().lower()
     print(content)
-
-    count = content.split()
-    print(len(count))
-
+    chars_dict = dict()
+    for c in content:
+        if (not c in chars_dict):
+            chars_dict[c] = 0
+        chars_dict[c] += 1
+    ordered_dict = dict(sorted(chars_dict.items(), reverse=True, key=lambda item: item[1]))
+    print(ordered_dict)
 
 main()
 
